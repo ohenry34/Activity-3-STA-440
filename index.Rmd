@@ -1,0 +1,165 @@
+---
+title: "Licorice is an Effective Postoperative Sore Throat Preventative"
+date: "11/19/2021"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: solarized-light
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+library(xaringanthemer)
+library(kableExtra)
+knitr::opts_chunk$set(echo = F)
+style_duo_accent(
+  primary_color = "#866fa3",
+  secondary_color = "#F1DE67",
+  inverse_header_color = "#464a53",
+  black_color = "#464a53",
+  header_font_google = google_font("Atkinson Hyperlegible"),
+  text_font_google   = google_font("Atkinson Hyperlegible", "300", "300i"),
+  code_font_google   = google_font("Source Code Pro"),
+  title_slide_background_color = "#FFFFFF",
+  title_slide_background_size = "contain",
+  base_font_size = "24px",
+  extra_css = list(
+    "h1" = list("margin-block-start" = "0.4rem", 
+                "margin-block-end" = "0.4rem"),
+    "h2" = list("margin-block-start" = "0.4rem", 
+                "margin-block-end" = "0.4rem"),
+    "h3" = list("margin-block-start" = "0.4rem", 
+                "margin-block-end" = "0.4rem"),
+    ".small" = list("font-size" = "90%"),
+    ".midi" = list("font-size" = "150%"),
+    ".large" = list("font-size" = "200%"),
+    ".xlarge" = list("font-size" = "600%"),
+    ".hand" = list("font-family" = "'Gochi Hand', cursive",
+                   "font-size" = "125%"),
+    ".task" = list("padding-right"    = "10px",
+                   "padding-left"     = "10px",
+                   "padding-top"      = "3px",
+                   "padding-bottom"   = "3px",
+                   "margin-bottom"    = "6px",
+                   "margin-top"       = "6px",
+                   "border-left"      = "solid 5px #F1DE67",
+                   "background-color" = "#F1DE6750"),
+    ".large" = list("font-size" = "200%"),
+    ".pull-left" = list("width" = "49%",
+                        "float" = "left"),
+    ".pull-right" = list("width" = "49%",
+                         "float" = "right"),
+    ".pull-left-wide" = list("width" = "70%",
+                             "float" = "left"),
+    ".pull-right-narrow" = list("width" = "27%",
+                                "float" = "right"),
+    ".pull-left-narrow" = list("width" = "27%",
+                               "float" = "left"),
+    ".pull-right-wide" = list("width" = "70%",
+                              "float" = "right")
+  )
+)
+
+```
+
+
+```{r include = F}
+source("licorice.R")
+```
+
+class: inverse, reverse
+
+## Motivation
+
+- Double-lumen tubes used in operations are large and tend to provoke sore throats
+- A small study suggests that gargling with licorice before induction of anesthesia reduces the risk of postoperative sore throat
+- Want to investigate licorice's potential in a more thorough study
+
+```{r, out.width="80%", fig.align = "center", fig.cap="Double-lumen tube"}
+knitr::include_graphics("images/double-lumen.png")
+```
+
+---
+
+## Introduction
+
+### Study Details
+
+- Double-blind
+- 236 patients
+  - Undergoing elective thoracic surgery requiring intubation
+- Random selection into treatment groups
+  - One group gargled *licorice* prior to operation
+  - One group gargled *sugar water* prior to operation
+- **Outcomes**: sore throat and coughing
+  - 30 minutes after operation
+  - 90 minutes after operation
+  - 4 hours after operation
+  - First postoperative morning
+
+---
+
+## Introduction
+
+### Demographics
+
+.pull-left-narrow[
+- Examination of characteristics of both groups
+  - Both groups have similar summary statistics
+]
+
+
+.pull-right-wide[
+```{r}
+demographic %>%
+  slice(1:3) %>%
+  kable(booktabs = T, longtable = TRUE,
+      col.names = c("Licorice (N=118)", "Sugar-water (N=117)"))
+```
+]
+
+
+---
+
+## Introduction
+
+### Baseline Characteristics
+
+
+```{r}
+demographic %>%
+  slice(5:7, 12:14) %>%
+  mutate(rownames = c("Current", "Past", "Never", "I", "II", "III")) %>%
+  remove_rownames %>% column_to_rownames(var="rownames") %>%
+  kable(booktabs = T, longtable = TRUE,
+      col.names = c("Licorice (N=118)", "Sugar-water (N=117)")) %>%
+  pack_rows("Smoking", 1, 3, bold = F, indent = T,
+            latex_gap_space = "0.5em", hline_after = F) %>%
+  pack_rows("ASA physical status, %", 4, 6,
+            latex_gap_space = "0.5em", bold = F, indent = T, hline_after = F)
+```
+
+---
+
+
+
+---
+
+## 
+
+
+
+
+
+---
+
+class: inverse, reverse
+
+## Conclusion
+
+Licorice gargling prior to the induction of anesthesia appears to be a useful
+measure in preventing postoperative throat soreness and coughing!
