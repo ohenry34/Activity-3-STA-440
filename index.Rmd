@@ -137,22 +137,41 @@ demographic %>%
   remove_rownames %>% column_to_rownames(var="rownames") %>%
   kable(booktabs = T, longtable = TRUE,
       col.names = c("Licorice (N=118)", "Sugar-water (N=117)")) %>%
-  pack_rows("Smoking", 1, 3, bold = F, indent = T,
+  pack_rows("Smoking, n", 1, 3, bold = F, indent = T,
             latex_gap_space = "0.5em", hline_after = F) %>%
-  pack_rows("ASA physical status, %", 4, 6,
+  pack_rows("ASA physical status, n", 4, 6,
             latex_gap_space = "0.5em", bold = F, indent = T, hline_after = F)
 ```
 
 ---
 
+## Results
+
+### Primary Outcome
 
 
 ---
 
-## 
+## Results
+
+### Primary Outcome
+
+---
+
+## Results
+
+### Secondary Outcome
 
 
+---
 
+## Results
+
+### Secondary Outcome
+
+---
+
+## Discussion
 
 
 ---
